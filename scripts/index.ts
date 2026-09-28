@@ -1,13 +1,3 @@
-const litresButton = document.getElementById(
-  "switchToLitres",
-) as HTMLButtonElement;
-
-if (litresButton) {
-  litresButton.addEventListener("click", (): void => {
-    window.location.href = "./Liters.html";
-  });
-}
-
 const degreesButton = document.getElementById(
   "switchToDegrees",
 ) as HTMLButtonElement;
@@ -15,6 +5,16 @@ const degreesButton = document.getElementById(
 if (degreesButton) {
   degreesButton.addEventListener("click", (): void => {
     window.location.href = "./degrees.html";
+  });
+}
+
+const distanceButton = document.getElementById(
+  "switchToKM",
+) as HTMLButtonElement;
+
+if (distanceButton) {
+  distanceButton.addEventListener("click", (): void => {
+    window.location.href = "./distance.html";
   });
 }
 

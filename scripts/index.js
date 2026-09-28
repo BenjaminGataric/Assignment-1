@@ -1,14 +1,14 @@
 "use strict";
-const litresButton = document.getElementById("switchToLitres");
-if (litresButton) {
-  litresButton.addEventListener("click", () => {
-    window.location.href = "./Liters.html";
-  });
-}
 const degreesButton = document.getElementById("switchToDegrees");
 if (degreesButton) {
   degreesButton.addEventListener("click", () => {
     window.location.href = "./degrees.html";
+  });
+}
+const distanceButton = document.getElementById("switchToKM");
+if (distanceButton) {
+  distanceButton.addEventListener("click", () => {
+    window.location.href = "./distance.html";
   });
 }
 const volumeButton = document.getElementById("switchToVolume");
