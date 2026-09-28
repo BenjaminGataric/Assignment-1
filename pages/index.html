@@ -19,39 +19,63 @@
           >
         </div>
       </header>
-      <section>
-        <h2>Convert Metrics to fit your needs</h2>
-        <p>Select the unit you would like to convert</p>
+      <section class="max-w-5xl mx-auto px-6 pt-12 pb-8 text-center">
+        <h2 class="text02xl sm:text-4xl font-bold text-slate-900">
+          Convert Metrics to fit your needs
+        </h2>
+        <p class="text-base text-slate-600 mt-3 max-w-xl mx-auto">
+          Select the unit you would like to convert
+        </p>
       </section>
-      <main>
-        <div>
-          <h3>Celcius to Farhenheight</h3>
+      <main class="max-w-5xl mx-auto px-6 pb-16">
+        <div
+          class="grid grid-cols-1 md:grid=cols-3 gap-6 bg-blue-400 rounded-lg"
+        >
+          <h3 class="text-lg font-bold text-slate-800 pl-100">
+            Celcius to Farhenheight
+          </h3>
           <button
-            class="text-xs text-blue-800 text-decoration:none"
-            onclick="location.href = '/pages/degrees.html'"
+            id="switchToDegrees"
+            class="w-3xl mt-4 rounded-lg bg-blue-600 px-4 py-2 ml-30 font-semibold text-white hover:bg-blue-700 transition cursor-pointer"
           >
             Convert Degrees
           </button>
         </div>
-        <div>
-          <h3>Convert Litres to Gallons</h3>
+        <div
+          class="grid grid-cols-1 md:grid=cols-3 mt-15 gap-6 bg-red-400 rounded-lg"
+        >
+          <h3 class="text-lg font-bold text-slate-800 pl-100">
+            Convert Litres to Gallons
+          </h3>
           <button
-            class="text-xs text-red-800 text-decoration:none"
-            onclick="location.href = '/pages/Liters.html'"
+            id="switchToLitres"
+            class="w-3xl mt-4 rounded-lg bg-red-600 px-4 py-2 ml-30 font-semibold text-white hover:bg-red-700 transition cursor-pointer"
           >
             Convert Measurement
           </button>
         </div>
-        <div>
-          <h3>Kilograms to Pounds</h3>
+        <div
+          class="grid grid-cols-1 md:grid=cols-3 mt-15 gap-6 bg-green-400 rounded-lg"
+        >
+          <h3 class="text-lg font-bold text-slate-800 pl-100">
+            Kilograms to Pounds
+          </h3>
           <button
-            class="text-xs text-green-800 text-decoration:none"
-            onclick="location.href = '/pages/volume.html'"
+            id="switchToVolume"
+            class="w-3xl mt-4 rounded-lg bg-green-600 px-4 py-2 ml-30 font-semibold text-white hover:bg-green-700 transition cursor-pointer"
           >
             Convert Volume
           </button>
         </div>
       </main>
-    </body>
+      <footer class="bg-white border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 py-6 text-center">
+    <p class="text-sm text-slate-500">
+    Built with Tailwind CSS and TypeScript &middot; CPRG 306 Web Development 2
+    </p>
+    </div>
+    </footer>
+
+      <script src="../scripts/index.js"></script>
   </body>
 </html>
