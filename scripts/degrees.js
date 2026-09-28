@@ -1,10 +1,5 @@
 "use strict";
-const homeButton = document.getElementById("homeButton");
-if (homeButton) {
-  homeButton.addEventListener("click", () => {
-    window.location.href = "/pages/index.html";
-  });
-}
+
 // Return an arrow function that converts one number or an array of numbers.
 function getConverter(fromUnit, toUnit) {
   let convertOne;
