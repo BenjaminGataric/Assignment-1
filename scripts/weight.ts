@@ -17,15 +17,21 @@ const weightButton = document.getElementById("weightCalc") as HTMLButtonElement;
 //Function to handle all conversions
 const weightCalculation = (): void => {
   const selectedOptionId = selectedWeight.selectedOptions[0]?.id;
-  const inputValue = weightValues.value;
-  const weight = Number(inputValue);
+  const parts = weightValues.value.split(",").map((part) => part.trim());
+
+  if (parts.some((part) => part === "" || !Number.isFinite(Number(part)))) {
+    weightResult.textContent = "Enter a number or a list such as 10, 20.";
+    return;
+  }
+
+  const weights = parts.map(Number);
   // Handles the selection option in the form and displays either Pounds or Kilograms based on user choice
   if (selectedOptionId === "kgToPounds") {
-    const pounds = kgToPounds(weight);
-    weightResult.textContent = `${pounds.toFixed(2)} Pounds`;
+    const pounds = weights.map((weight) => kgToPounds(weight));
+    weightResult.textContent = `${pounds.map((value) => value.toFixed(2)).join(", ")} Pounds`;
   } else if (selectedOptionId === "poundsToKg") {
-    const kilograms = poundsToKg(weight);
-    weightResult.textContent = `${kilograms.toFixed(2)} Kilograms`;
+    const kilograms = weights.map((weight) => poundsToKg(weight));
+    weightResult.textContent = `${kilograms.map((value) => value.toFixed(2)).join(", ")} Kilograms`;
   }
 };
 

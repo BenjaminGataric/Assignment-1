@@ -1,53 +1,38 @@
-/*
-Name: [Your name and group members]
-Date: September 28, 2026
-Program: Celsius and Fahrenheit converter.
-The user chooses a direction and enters one number or a comma-separated list.
-The program checks that every entry is a number.
-It converts the numbers and displays the results or an error message.
-*/
+// Calculation Variables
+const cToF = (celcius: number): number => celcius * 1.8 + 32;
+const fToC = (fahrenheit: number): number => ((fahrenheit - 32) * 5) / 9;
 
-// Return an arrow function that converts one number or a list.
-function getTemperatureConverter(from: string, to: string) {
-  const convertOne = (value: number): number =>
-    from === "C" && to === "F"
-      ? value * 9 / 5 + 32
-      : (value - 32) * 5 / 9;
+// Document Variables
+const tempResult = document.getElementById(
+  "degrees-result",
+) as HTMLParagraphElement;
+const tempValues = document.getElementById("degreesValues") as HTMLInputElement;
+const selectedTemp = document.getElementById("direction") as HTMLSelectElement;
+const tempButton = document.getElementById("degreesCalc") as HTMLButtonElement;
 
-  return (values: number | number[]): number | number[] =>
-    Array.isArray(values) ? values.map(convertOne) : convertOne(values);
-}
+//Function to handle all conversions
+const weightCalculation = (): void => {
+  const selectedOptionId = selectedTemp.selectedOptions[0]?.id;
+  const parts = tempValues.value.split(",").map((part) => part.trim());
 
-// Get the form elements.
-const form = document.getElementById("temperature-form") as HTMLFormElement;
-const direction = document.getElementById("direction") as HTMLSelectElement;
-const valuesInput = document.getElementById("values") as HTMLInputElement;
-const result = document.getElementById("result") as HTMLParagraphElement;
-const error = document.getElementById("error") as HTMLParagraphElement;
-
-// Convert when the user submits the form.
-form.addEventListener("submit", (event): void => {
-  event.preventDefault();
-  result.textContent = "";
-  error.textContent = "";
-
-  const parts = valuesInput.value.split(",").map(part => part.trim());
-
-  if (parts.some(part => part === "" || !Number.isFinite(Number(part)))) {
-    error.textContent = "Enter a number or a list such as 0, 25, 100.";
+  if (parts.some((part) => part === "" || !Number.isFinite(Number(part)))) {
+    tempResult.textContent = "Enter a number or a list such as 10, 20.";
     return;
   }
 
-  const numbers = parts.map(Number);
-  const values = numbers.length === 1 ? Number(parts[0]) : numbers;
+  const degrees = parts.map(Number);
+  // Handles the selection option in the form and displays either Pounds or Kilograms based on user choice
+  if (selectedOptionId === "cToF") {
+    const fahrenheit = degrees.map((temp) => cToF(temp));
+    tempResult.textContent = `${fahrenheit.map((value) => value.toFixed(2)).join(", ")} ℉`;
+  } else if (selectedOptionId === "fToC") {
+    const celcius = degrees.map((temp) => fToC(temp));
+    tempResult.textContent = `${celcius.map((value) => value.toFixed(2)).join(", ")} °C`;
+  }
+};
 
-  const from = direction.value === "C-F" ? "C" : "F";
-  const to = direction.value === "C-F" ? "F" : "C";
-  const converted = getTemperatureConverter(from, to)(values);
-
-  const formatted = Array.isArray(converted)
-    ? converted.map(value => Number(value.toFixed(4))).join(", ")
-    : Number(converted.toFixed(4));
-
-  result.textContent = `${formatted} °${to}`;
+// Event listener to Convert Button
+tempButton.form?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  weightCalculation();
 });
