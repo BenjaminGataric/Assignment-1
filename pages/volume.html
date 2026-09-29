@@ -21,7 +21,7 @@
       </header>
       <nav class="bg-gray-600">
         <ul class="mx-auto flex max-w-5xl items-center gap-6 px-6 py-4">
-          <li><a href="/pages/index.html" class="text-white hover:text-gray-300">Home</a></li>
+          <li><a href="index.html" class="text-white hover:text-gray-300">Home</a></li>
           <li><a href="/pages/degrees.html" class="text-white hover:text-gray-300">Tempeture</a></li>
           <li><a href="/pages/volume.html" class="text-white hover:text-gray-300">Weight</a></li>
           <li><a href="/pages/distance.html" class="text-white hover:text-gray-300">Distance</a></li>
@@ -39,32 +39,32 @@
         <div class="grid grid-cols-1 md:grid=cols-1 gap-6">
           <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col text-center">
             <h3 class="text-3xl font-bold text-slate-800 alignitems-center">
-            Degrees
+            Weight
             </h3>
             <form class="mt-6 space-y-4">
               <div>
                 <label for="direction" class="block font-medium">Convert from</label>
                 <select id="direction" class="mt-1 w-full rounded-lg border border-slate-300 p-3 bg-gray-200">
-                  <option id="cToF">Celcius to Farenheit</option>
-                  <option id="fToC">Farenheit to Celcius</option>
+                  <option id="kgToPounds">Kilograms to Pounds</option>
+                  <option id="poundsToKg">Pounds to Kilograms</option>
                 </select>
               </div>
               <div>
                 <label for="values" class="block font-medium">Value or list of Values</label>
                 <input
-                id="degreesValues" 
+                id="weightValues" 
                 type="text"
                 inputmode="decimal"
                 placeholder="e.g. 10, 20"
                 class="mt-1 w-full bg-gray-200 rounded-lg border border-slate-300 p-3">
               </div>
               <button
-              id="degreesCalc"
-              class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 text-slate-900 focus:border-blue-500 focus:outline-none text-white">Convert</button>
+              id="weightCalc"
+              class="w-full mt-4 rounded-lg bg-red-600 px-4 py-2 text-slate-900 focus:border-red-500 focus:outline-none text-white">Convert</button>
             </form>
             <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
-            <p class="text-xs uppercase tracking-wide text-slate-500">Degrees</p>
-            <p id="degrees-result" class="text-2xl font-bold text-black mt-1">
+            <p class="text-xs uppercase tracking-wide text-slate-500">Weight</p>
+            <p id="weight-result" class="text-2xl font-bold text-black mt-1">
               0.00
             </p>
           </div>
@@ -78,7 +78,7 @@
     </p>
     </div>
     </footer>
-  <script src="../scripts/degrees.js"></script>
+  <script src="../scripts/weight.js"></script>
   </body>
 </html>
 
