@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // Calculation Variables
 const kgToPounds = (kilograms) => kilograms * 2.20462;
 const poundsToKg = (pounds) => pounds * 0.45359237;
@@ -27,3 +28,4 @@ weightButton.form?.addEventListener("submit", (event) => {
     event.preventDefault();
     weightCalculation();
 });
+//# sourceMappingURL=weight.js.map

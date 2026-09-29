@@ -27,11 +27,11 @@
           <h1 class="text-2xl font-bold text-slate-900">Distance Converter</h1>
           <p class="text-base text-slate-600 mt-3 max-w-xl mx-auto">Convert Miles to Kilometres or Kilometres to Miles</p>
         </section>
-    <Main class="max-wl-5xl mx-auto px-6 pb-16">
+    <Main class="max-wl-5xl mx-auto px-50 pb-16">
         <div class="bg-white rounded-2xl shadow-md p-6">
           <h3 class="text-lg font-bold text-slate-900">Distance</h3>
           <p class="text-sm text-slate-500 m-1">Imperial: Miles<br>Metric: Kilometres</p>
-          
+        <form id="distance-form">  
           <div>
             <label for="direction" class="block font-medium">Convert from:</label>
             <select id="direction" class="mt-1 w-full rounded-lg border border-slate-300 p-3 bg-grey-200">
@@ -39,7 +39,7 @@
               <option value="kmToMiles">Kilometres to Miles</option>
             </select>
           </div>
-
+        
           <label for="distance" class="block text-sm font-medium text-slate-700 mt-5 mb-2">Value or list of values.</label>
           <input
             id="distance"
@@ -47,17 +47,21 @@
             placeholder="Example: 15 or 0, 10, 100"
             class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-purple-500 focus-outline-none"
           />
+          <p class="mt-1 text-sm text-slate-500">Seperate multiple values with commas.</p>
 
           <button
-            id="distance"
+            id="distance-button"
+            type="submit"
             class="w-full mt-4 rounded-lg bg-green-600 px-4 py-2 font-semibold text-white hover:bg-green-700 transition cursor-pointer"
           >Convert</button>
-
+        </form>
+        <p id="error" class="mt-2 text-sm text-red-600"></p>
           <div class="mt-5 rounded-lg bg-slate-200 p-4 text-center">
               <p class="text-xs uppercase tracker-wide text-slate-500">Distance</p>
-              <p id="miles-results" class="text-2xl font-bold text-green-600 mt-1">0.00</p>
+              <p id="result" class="text-2xl font-bold text-green-600 mt-1">0.00</p>
           </div>
         </div>
     </Main>
+    <script src="../scripts/distance.js"></script>
   </body>
 </html>
